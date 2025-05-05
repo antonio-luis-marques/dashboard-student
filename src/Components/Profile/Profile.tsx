@@ -1,4 +1,4 @@
-
+'use client'
 // pages/perfil.tsx (ou src/pages/perfil.tsx se usa Next.js)
 import React, { useState } from 'react';
 import { Container, Box, Modal, TextField, Button, Typography, Avatar, Card, CardContent } from '@mui/material';
