@@ -23,18 +23,20 @@ export default function Course() {
         ? courses.filter(course => course.category === categoryCourse)
         : courses
 
-    const getStatusColor = (status: CourseType['status']) => {
-        switch (status) {
-            case 'não iniciado':
-                return 'default'
-            case 'em andamento':
-                return 'warning'
-            case 'concluído':
-                return 'success'
-            default:
-                return 'default'
-        }
-    }
+    // const getStatusColor = (status: CourseType['status']) => {
+    //     switch (status) {
+    //         case 'não iniciado':
+    //             return 'default'
+    //         case 'em andamento':
+    //             return 'warning'
+    //         case 'concluído':
+    //             return 'success'
+    //         default:
+    //             return 'default'
+    //     }
+    // }
+
+    const dashUrl = process.env.NEXT_PUBLIC_URL
 
     return (
         <ThemeProvider theme={theme}>
@@ -129,7 +131,7 @@ export default function Course() {
                                 justifyContent: 'center', // centraliza o botão horizontalmente
                             }}
                         >
-                            <Link href={`/course?id=${item.id}`} passHref style={{ width: '100%' }}>
+                            <Link href={`${dashUrl}course?id=${item.id}`} passHref style={{ width: '100%' }}>
                                 <Button
                                     variant="outlined"
                                     fullWidth

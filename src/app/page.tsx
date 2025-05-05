@@ -42,7 +42,7 @@ export default function AppProviderComponent() {
       navigation={NAVIGATION}
       router={router}
       branding={{
-        title: 'Jungle Midia',
+        title: 'Grupo Jungle',
         logo: <Image src="/logo.png" alt="Logo Jungle Midia" width={40} height={40} />,
       }}
     >

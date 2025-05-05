@@ -6,7 +6,7 @@ import { Box, Typography, Button, ThemeProvider } from '@mui/material'
 import { courses } from '../../../data/Courses'
 import Image from 'next/image'
 import { useContextCategoryCourse } from '../Provider/CategoryCourseProvider'
-import { Course as  CourseType} from '../../../models/course'
+import { Course as CourseType } from '../../../models/course'
 import theme from '../../../theme'
 
 export default function Course() {
@@ -20,6 +20,8 @@ export default function Course() {
     ? courses.filter(course => course.category === categoryCourse)
     : courses
 
+
+  const dashUrl = process.env.NEXT_PUBLIC_URL
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -107,7 +109,7 @@ export default function Course() {
               <Typography variant='subtitle1' fontWeight='bold'>
                 {item.isFree ? 'Gratuito' : `MZN ${item.price?.toFixed(2)}`}
               </Typography>
-              <Link href={`http://localhost:3002/course?id=${item.id}`} passHref>
+              <Link href={`${dashUrl}course?id=${item.id}`} passHref>
                 <Button
                   variant='outlined'
                   sx={{
